@@ -1,4 +1,4 @@
-function Achievement(name) {
+function GSAchievement(name) {
   this.name = name;
   this.localizedName = Core.bundle.get("achievement.golden-silicon-" + this.name + ".name");
   this.description = Core.bundle.get("achievement.golden-silicon-" + this.name + ".description");
@@ -6,11 +6,11 @@ function Achievement(name) {
   this.complete = Core.settings.getBool("golden-silicon-" + this.name + "-completed", false);
 }
 
-Achievement.prototype.isCompleted = function() {
+GSAchievement.prototype.isCompleted = function() {
   return Core.settings.getBool("golden-silicon-" + this.name + "-completed", false);
 };
 
-Achievement.prototype.completeNow = function() {
+GAAchievement.prototype.completeNow = function() {
   if (!this.isCompleted()) {
     this.complete = true;
     Core.settings.put("golden-silicon-" + this.name + "-completed", true);
@@ -28,7 +28,7 @@ var array = new Seq();
 
 exports.load = function() {
   nameArray.each(a => {
-    array.add(new Achievement(a));
+    array.add(new GSAchievement(a));
   });
   
   exports.array = array.copy();
