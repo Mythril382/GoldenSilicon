@@ -21,8 +21,7 @@ GSAchievement.prototype.completeNow = function() {
 
 var nameArray = new Seq([
   "copper-wall",
-  "drowned",
-  "pattern-1"
+  "drowned"
 ]);
 
 var array = new Seq();
