@@ -25,8 +25,6 @@ function BlockAmmoType(block, ammoPerDamage, object) {
       const build = Units.closestBuilding(unit.team, unit.x, unit.y, range, u => u.block == this.block && !u.dead);
       
       if (build != null) {
-        if (build.team != unit.team) return;
-        
         Fx.itemTransfer.at(build.x, build.y, this.ammoPerDamage / 2, Pal.ammo, unit);
         unit.ammo = Math.min(unit.ammo + this.ammoPerDamage, unit.type.ammoCapacity);
         build.damage(unit.team, this.healthTaken);

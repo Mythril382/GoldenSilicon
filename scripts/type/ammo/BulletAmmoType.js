@@ -19,7 +19,7 @@ function BulletAmmoType(object) {
     resupply(unit) {
       const range = unit.hitSize + this.range;
       const bulletConsumer = bullet => {
-        if (bullet.team != unit.team && bullet.type.absorbable && bullet.within(unit, range)) {
+        if (bullet.team != unit.team && bullet.type.absorbable && bullet.within(unit, range) && bullet != null) {
           this.ammoColor = bullet.type.backColor;
           unit.ammo = Math.min(unit.ammo + bullet.type.width, unit.type.ammoCapacity);
           bullet.absorb();
