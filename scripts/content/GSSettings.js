@@ -62,7 +62,7 @@ exports.load = function() {
             dialogA.buttons.button(a.isCompleted() ? a.localizedName : "[lightgray]???", a.isCompleted() ? Icon.lockOpen : Icon.lock, () => {
               const dialogB = new BaseDialog(a.isCompleted() ? a.localizedName : "???");
               dialogB.cont.image(a.isCompleted() ? a.icon : Core.atlas.find("alpha-bg")).row();
-              dialogB.cont.add(a.isCompleted() ? a.localizedName : "[lightgray]???").row();
+              dialogB.cont.add(a.isCompleted() ? "[accent]" + a.localizedName : "[lightgray]???").row();
               dialogB.cont.add(a.isCompleted() ? a.description : "[lightgray]???");
               dialogB.addCloseButton();
               dialogB.show();
