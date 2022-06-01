@@ -10,7 +10,7 @@ GSAchievement.prototype.isCompleted = function() {
   return Core.settings.getBool("golden-silicon-" + this.name + "-completed", false);
 };
 
-GAAchievement.prototype.completeNow = function() {
+GSAchievement.prototype.completeNow = function() {
   if (!this.isCompleted()) {
     this.complete = true;
     Core.settings.put("golden-silicon-" + this.name + "-completed", true);
@@ -21,7 +21,8 @@ GAAchievement.prototype.completeNow = function() {
 
 var nameArray = new Seq([
   "copper-wall",
-  "drowned"
+  "drowned",
+  "pattern-1"
 ]);
 
 var array = new Seq();
