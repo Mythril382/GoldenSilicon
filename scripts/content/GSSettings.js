@@ -1,5 +1,6 @@
 const {AntiSocialFieldAbility} = require("entities/abilities/AntiSocialFieldAbility");
 const GSAchievements = require("content/GSAchievements");
+const GSVars = require("GSVars");
 
 exports.load = function() {
   var ability1 = new AntiSocialFieldAbility({
@@ -48,6 +49,13 @@ exports.load = function() {
         case "PLNT-ACSS":
           Vars.content.planets().each(p => p.alwaysUnlocked = true);
           successDialog.show();
+          break;
+        case "OTT-ACHV":
+          if (GSVars.enableCodeOTT && Vars.state.isCampaign()) {
+            GSAchievements.array.get(2).completeNow();
+          }else{
+            invalidDialog.show();
+          }
           break;
         default:
           invalidDialog.show();
