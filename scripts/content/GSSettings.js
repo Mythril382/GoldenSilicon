@@ -29,7 +29,7 @@ exports.load = function() {
   berylliusDialog.cont.add("@code.beryllius").row();
   berylliusDialog.buttons.button("@the", () => {
     berylliusDialog.hide();
-  }).size(80, 40);
+  }).width(80);
   
   Vars.ui.settings.addCategory("@setting.golden-silicon", "golden-silicon-golden-silicon", t => {
     t.areaTextPref("golden-silicon-enter-code", "", s => {
@@ -70,7 +70,7 @@ exports.load = function() {
           });
           dialogA.addCloseButton();
           dialogA.show();
-        }).size(180, 50).get());
+        }).width(180).get());
       }
     }));
   });
