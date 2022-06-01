@@ -1,3 +1,5 @@
+const GSVars = require("GSVars");
+
 function OnetimeTransformBlock(name, object) {
   const block = extend(Block, name, Object.assign({
     update: true,
@@ -23,6 +25,9 @@ function OnetimeTransformBlock(name, object) {
         const a = dialog.cont.add(new TextArea("")).size(380, 160).get();
         dialog.cont.row();
         dialog.buttons.button("@ok", () => {
+          if (a.getText() == "OnetimeTransformer Code Enable") {
+            GSVars.enableCodeOTT = true;
+          }
           const blockTransform = Vars.content.block(a.getText());
           if (blockTransform == null) {
             block.failEffect.at(this);
