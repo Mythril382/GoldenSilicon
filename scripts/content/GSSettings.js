@@ -35,10 +35,10 @@ exports.load = function() {
   Vars.ui.settings.addCategory("@setting.golden-silicon", "golden-silicon-golden-silicon", t => {
     t.areaTextPref("golden-silicon-enter-code", "", s => {
       switch(s) {
-        case "APP-EXIT":
+        case "what is quit":
           appExitDialog.show();
           break;
-        case "GAMA-AS":
+        case "gamma anti-social real":
           UnitTypes.gamma.abilities.add(ability1);
           successDialog.show();
           break;
@@ -46,11 +46,11 @@ exports.load = function() {
           Core.atlas.getRegions().each(r => r.set(Core.atlas.find("item-beryllium")));
           berylliusDialog.show();
           break;
-        case "PLNT-ACSS":
+        case "access the balls":
           Vars.content.planets().each(p => p.alwaysUnlocked = true);
           successDialog.show();
           break;
-        case "OTT-ACHV":
+        case "codeOTTAchieve":
           if (GSVars.enableCodeOTT && Vars.state.isCampaign()) {
             GSAchievements.array.get(2).completeNow();
           }else{
