@@ -9,11 +9,7 @@ function OnetimeTransformBlock(name, object) {
     configurable: true,
     saveConfig: false,
     transformEffect: Fx.blastExplosion,
-    failEffect: Fx.unitEnvKill,
-    
-    toString() {
-      return "GoldenSilicon.world.blocks.misc.OnetimeTransformBlock";
-    }
+    failEffect: Fx.unitEnvKill
   }, object));
   
   block.buildType = () => extend(Building, {
