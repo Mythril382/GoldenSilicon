@@ -56,10 +56,6 @@ function AntiSocialFieldAbility(object) {
     
     localized() {
       return Core.bundle.format("ability.antisocialfield", this.radius / Vars.tilesize);
-    },
-    
-    toString() {
-      return "GoldenSilicon.entities.abilities.AntiSocialFieldAbility";
     }
   }, object));
 }
