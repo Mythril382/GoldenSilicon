@@ -19,9 +19,17 @@ GSAchievement.prototype.completeNow = function() {
   }
 };
 
+GSAchievement.prototype.uncompleteNow = function() {
+  if (this.isCompleted()) {
+    this.complete = false;
+    Core.settings.put("golden-silicon-" + this.name + "-completed", false);
+  }
+};
+
 var nameArray = new Seq([
   "copper-wall",
-  "drowned"
+  "drowned",
+  "block-of-mystery"
 ]);
 
 var array = new Seq();

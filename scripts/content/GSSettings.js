@@ -76,6 +76,19 @@ exports.load = function() {
               dialogB.show();
             }).growX().row();
           });
+          dialogA.buttons.button("@achievement.golden-silicon-reset", () => {
+            const dialogB = new Dialog();
+            dialogB.cont.add("@achievement.golden-silicon-confirm-reset").row();
+            dialogB.buttons.button("@yes", Icon.ok, () => {
+              GSAchievements.array.each(a => a.uncompleteNow());
+              dialogB.hide();
+              dialogA.hide();
+            }).width(150);
+            dialogB.buttons.button("@no", Icon.cancel, () => {
+              dialogB.hide();
+            }).width(150);
+            dialogB.show();
+          }).growX().row();
           dialogA.addCloseButton();
           dialogA.show();
         }).width(180).get());
