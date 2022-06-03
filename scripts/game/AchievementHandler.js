@@ -2,7 +2,7 @@
 const GSAchievements = require("content/GSAchievements");
 
 Events.on(BlockBuildEndEvent, event => {
-  if (event.unit.isPlayer() && event.tile.build.block == Blocks.copperWall) {
+  if (event.unit.isPlayer() && event.tile.build != null && event.tile.build.block == Blocks.copperWall) {
     GSAchievements.array.get(0).completeNow();
   }
 });
