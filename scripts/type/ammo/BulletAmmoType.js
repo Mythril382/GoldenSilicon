@@ -2,7 +2,7 @@
 function BulletAmmoType(object) {
   return extend(AmmoType, Object.assign({
     range: 85,
-    ammoColor: Pal.ammo,
+    ammoColor: Color.black,
     
     icon() {
       return "";
@@ -27,10 +27,6 @@ function BulletAmmoType(object) {
       };
       
       Groups.bullet.intersect(unit.x - range, unit.y - range, range * 2, range * 2, bulletConsumer);
-    },
-    
-    toString() {
-      return "GoldenSilicon.type.ammo.BulletAmmoType";
     }
   }, object));
 }

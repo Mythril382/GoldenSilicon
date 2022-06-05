@@ -29,10 +29,6 @@ function BlockAmmoType(block, ammoPerDamage, object) {
         unit.ammo = Math.min(unit.ammo + this.ammoPerDamage, unit.type.ammoCapacity);
         build.damage(unit.team, this.healthTaken);
       }
-    },
-    
-    toString() {
-      return "GoldenSilicon.type.ammo.BlockAmmoType";
     }
   }, object));
 }
